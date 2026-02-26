@@ -133,6 +133,20 @@ cout << "gpa= " << sum/sumcredit;
 }
 //++++++++++++++++++++++++++++
 
+void printCourseReport(std::vector<Course>& courses, std::vector<Student>&
+students) {
+   cout << "enter course id: ";
+   string courseid;
+   cin >> courseid;
+   Course* c1= findCourseById(courses,courseid);
+   if (c1 == nullptr) {
+      cout << "unfound course";
+      return;
+   }
+   for (int i = 0; i < c1->grades.size();++i) {
+     cout<< c1->grades[i].first << ' ' << c1->grades[i].second << endl;
+   }
+}
 
 int main() {
 
